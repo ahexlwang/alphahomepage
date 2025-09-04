@@ -1,0 +1,85 @@
+/* 기존 코드 유지 + 색상만 베이지/분홍 계열로 변경 */
+
+body {
+    margin: 0;
+    font-family: "Noto Sans KR", sans-serif;
+    line-height: 1.6;
+    background: #fdf6f0; /* 연베이지 */
+}
+
+header {
+    background: #f7cac9; /* 연분홍 */
+    color: #5c3a2e;      /* 진한 브라운 */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #f6e2d3; /* 연베이지 */
+}
+
+.logo-area img,
+header h1 img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #a05260; /* 분홍빛 브라운 */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #d46a92; /* 진한 분홍 */
+    text-decoration: underline;
+}
+
+main {
+    padding: 2rem;
+    max-width: 960px;
+    margin: auto;
+}
+
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: #fff0e6; /* 밝은 베이지-분홍 */
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(247, 202, 201, 0.15);
+}
+
+.hero h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #a05260;
+}
+
+.activities {
+    margin-top: 3rem;
+}
+
+.activities h2 {
+    border-bottom: 2px solid #f7cac9;
+    padding-bottom: 0.5rem;
+    color: #a05260;
+}
+
+footer {
+    background: #f7cac9;
+    color: #5c3a2e;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    border-top: 3px solid #f6e2d3;
+}
+
+footer div {
+    margin: 0.3rem 0;
+}
