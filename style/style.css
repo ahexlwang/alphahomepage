@@ -9,16 +9,18 @@ body {
 
 /* 헤더 */
 .main-header {
+    position: sticky; top: 0;
+    z-index:100;
     display: flex;
     justify-content: space-between; /* 로고는 왼쪽, 메뉴는 오른쪽 */
     align-items: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0)); 
+    backdrop-filter: blur(4px);
     padding: 1rem 2rem;
-    position: relative;
-    z-index: 2; /* hero 오버레이보다 위 */
 }
 
 .logo {
-    height: 40px;
+    height: 40px; display:block;
 }
 
 /* 네비게이션 */
@@ -34,18 +36,19 @@ body {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    padding:6px 10px; border-radius: 8px; transition: transform .15s ease, background .15s ease;
 }
 
 .main-nav a:hover {
     text-decoration: underline;
 }
-
+.main-nav a[aria-current="page"] { color: var(--accent); }
 /* Hero 영역 */
 .hero {
     position: relative; /* ::before 기준 */
     text-align: center;
     padding: 5rem 1rem;
-    background: url("background.jpg") no-repeat center center/cover;
+    background: url("../image/background.jpg") no-repeat center center/cover;
     max-width: 100%;  /* hero 전체 가로 채우기 */
     margin: auto;
     overflow: hidden; /* ::before가 삐져나오지 않게 */
