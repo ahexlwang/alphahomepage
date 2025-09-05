@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: "Noto Sans KR", sans-serif;
-    background-color: #000; /* 검정 배경 */
+    background-color: #000; /* 기본 배경 */
     color: white;
     line-height: 1.6;
 }
@@ -13,6 +13,8 @@ body {
     justify-content: space-between; /* 로고는 왼쪽, 메뉴는 오른쪽 */
     align-items: center;
     padding: 1rem 2rem;
+    position: relative;
+    z-index: 2; /* hero 오버레이보다 위 */
 }
 
 .logo {
@@ -40,45 +42,48 @@ body {
 
 /* Hero 영역 */
 .hero {
-    position: relative;
+    position: relative; /* ::before 기준 */
     text-align: center;
     padding: 5rem 1rem;
     background: url("background.jpg") no-repeat center center/cover;
-    max-width: 800px;
+    max-width: 100%;  /* hero 전체 가로 채우기 */
     margin: auto;
+    overflow: hidden; /* ::before가 삐져나오지 않게 */
 }
+
 .hero::before {
     content: "";
     position: absolute;
     top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.5); /* 검정 반투명 */
+    width: 100%;
+    height: 100%; /* hero 영역까지만 덮음 */
+    background: rgba(0,0,0,0.5); /* 반투명 어둡게 */
     z-index: 0;
-    pointer-events: none;
+    pointer-events: none; /* 클릭 방해 안 함 */
 }
+
 .hero h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #ddd;
     position: relative;
     z-index: 1;
+    color: #fff;
 }
 
 .hero h1 {
     font-size: 2.5rem;
     margin: 1rem 0;
-    color: #ddd;
     position: relative;
     z-index: 1;
+    color: #fff;
 }
 
 .hero p {
     font-size: 1rem;
     margin-top: 1.5rem;
-    color: #ddd;
+    color: #fff; /* 글자 선명하게 */
     position: relative;
     z-index: 1;
-
 }
 
 /* About 영역 */
