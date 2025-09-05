@@ -1,85 +1,124 @@
-/* 기존 코드 유지 + 색상만 베이지/분홍 계열로 변경 */
-
+/* 전체 스타일 */
 body {
     margin: 0;
     font-family: "Noto Sans KR", sans-serif;
+    background-color: #000; /* 검정 배경 */
+    color: white;
     line-height: 1.6;
-    background: #fdf6f0; /* 연베이지 */
 }
 
-header {
-    background: #f7cac9; /* 연분홍 */
-    color: #5c3a2e;      /* 진한 브라운 */
-    padding: 1rem 2rem;
+/* 헤더 */
+.main-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* 로고는 왼쪽, 메뉴는 오른쪽 */
     align-items: center;
-    border-bottom: 3px solid #f6e2d3; /* 연베이지 */
+    padding: 1rem 2rem;
 }
 
-.logo-area img,
-header h1 img {
-    height: 50px;
+.logo {
+    height: 40px;
 }
 
-nav ul {
-    list-style: none;
+/* 네비게이션 */
+.main-nav ul {
     display: flex;
-    gap: 1.5rem;
+    list-style: none;
     margin: 0;
     padding: 0;
+    gap: 1.5rem;
 }
 
-nav a {
-    color: #a05260; /* 분홍빛 브라운 */
+.main-nav a {
+    color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.2s;
 }
 
-nav a:hover {
-    color: #d46a92; /* 진한 분홍 */
+.main-nav a:hover {
     text-decoration: underline;
 }
 
-main {
-    padding: 2rem;
-    max-width: 960px;
+/* Hero 영역 */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 5rem 1rem;
+    background: url("background.jpg") no-repeat center center/cover;
+    max-width: 800px;
     margin: auto;
 }
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5); /* 검정 반투명 */
+    z-index: 0;
+    pointer-events: none;
+}
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ddd;
+    position: relative;
+    z-index: 1;
+}
 
-.hero {
+.hero h1 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    color: #ddd;
+    position: relative;
+    z-index: 1;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    color: #ddd;
+    position: relative;
+    z-index: 1;
+
+}
+
+/* About 영역 */
+.about {
     text-align: center;
     padding: 3rem 1rem;
-    background: #fff0e6; /* 밝은 베이지-분홍 */
+    background-color: #111; /* hero와 구분되도록 살짝 밝은 검정 */
+}
+
+.about h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #222;
+    padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(247, 202, 201, 0.15);
+    min-width: 150px;
+    max-width: 200px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
 }
 
-.hero h2 {
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    color: #a05260;
+.card p {
+    margin: 0;
+    font-size: 1.1rem;
 }
 
-.activities {
-    margin-top: 3rem;
-}
-
-.activities h2 {
-    border-bottom: 2px solid #f7cac9;
-    padding-bottom: 0.5rem;
-    color: #a05260;
-}
-
+/* 푸터 */
 footer {
-    background: #f7cac9;
-    color: #5c3a2e;
+    background: #2b6cb0;
+    color: white;
     padding: 1.5rem 2rem;
     text-align: center;
-    border-top: 3px solid #f6e2d3;
-}
-
-footer div {
-    margin: 0.3rem 0;
+    margin-top: 2rem;
 }
